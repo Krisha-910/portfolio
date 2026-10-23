@@ -1,0 +1,1166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Krishha | WordPress Front-End Designer</title>
+    <meta
+      name="description"
+      content="WordPress Front-End Designer with 2 years of experience building responsive, user-friendly websites."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --blue: #2862ec;
+        --ink: #12172e;
+        --muted: #616b80;
+        --line: #e4e8f1;
+        --bg: #f8f9fe;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background:
+          radial-gradient(ellipse at 95% 4%, #e3ebff, transparent 26%),
+          var(--bg);
+        font:
+          16px/1.7 "DM Sans",
+          sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap {
+        width: min(1100px, calc(100% - 44px));
+        margin: auto;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        background: #f8f9fef0;
+        backdrop-filter: blur(16px);
+        z-index: 10;
+        border-bottom: 1px solid var(--line);
+      }
+      header .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 18px 0;
+      }
+      .brand {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .mark {
+        background: #12213b;
+        color: #66c4ff;
+        border-radius: 10px;
+        padding: 2px 11px;
+        font-size: 25px;
+      }
+      nav {
+        display: flex;
+        gap: 22px;
+        font-size: 13px;
+      }
+      .btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 11px 22px;
+        border-radius: 50px;
+        border: 1px solid var(--line);
+        font:
+          500 13px "DM Sans",
+          sans-serif;
+        background: white;
+        cursor: pointer;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+      .primary {
+        background: var(--blue);
+        color: white;
+        border-color: var(--blue);
+        box-shadow: 0 5px 18px #2862ec30;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin: 28px 0;
+      }
+      .eyebrow,
+      .meta,
+      label {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.17em;
+        text-transform: uppercase;
+      }
+      .eyebrow {
+        color: var(--blue);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+      .eyebrow:before {
+        content: "";
+        width: 28px;
+        height: 1px;
+        background: #95b1ed;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Space Grotesk", sans-serif;
+      }
+      h1 {
+        font-size: clamp(44px, 6.8vw, 80px);
+        line-height: 1.01;
+        letter-spacing: -0.065em;
+        margin: 25px 0 30px;
+      }
+      h2 {
+        font-size: clamp(30px, 3.7vw, 44px);
+        line-height: 1.1;
+        letter-spacing: -0.05em;
+        max-width: 760px;
+        margin: 0 0 24px;
+      }
+      h3 {
+        font-size: 19px;
+        line-height: 1.3;
+        letter-spacing: -0.025em;
+        margin: 0 0 14px;
+      }
+      p {
+        color: var(--muted);
+        margin: 0 0 16px;
+      }
+      .lead {
+        max-width: 700px;
+      }
+      section {
+        padding: 90px 0;
+        scroll-margin-top: 90px;
+      }
+      .hero {
+        padding: 65px 0;
+        background:
+          linear-gradient(#496eaa06 1px, transparent 1px),
+          linear-gradient(90deg, #496eaa06 1px, transparent 1px);
+        background-size: 64px 64px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 0.8fr;
+        gap: 70px;
+        align-items: center;
+      }
+      .blue {
+        color: var(--blue);
+      }
+      .outline {
+        color: transparent;
+        -webkit-text-stroke: 1px #8ba7df;
+      }
+      .hero p {
+        font-size: 15px;
+        max-width: 550px;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .tag {
+        display: inline-block;
+        padding: 4px 10px;
+        border: 1px solid var(--line);
+        border-radius: 30px;
+        background: #f0f3f8;
+        font-size: 11px;
+        color: #505c72;
+      }
+      .hero .tag {
+        font:
+          9px/1.7 "IBM Plex Mono",
+          monospace;
+        text-transform: uppercase;
+      }
+      .portrait {
+        aspect-ratio: 4/5;
+        border-radius: 28px;
+        background:
+          linear-gradient(#7190c10a 1px, transparent 1px),
+          linear-gradient(90deg, #7190c10a 1px, transparent 1px), #f3f6ff;
+        background-size: 50px 50px;
+        box-shadow: 0 20px 65px #23447824;
+        border: 1px solid white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        text-align: center;
+      }
+      .portrait .mark {
+        font-size: 50px;
+        padding: 0 23px;
+        border-radius: 22px;
+        box-shadow: 0 0 26px #2862ec30;
+        margin-bottom: 20px;
+      }
+      .portrait small {
+        font:
+          9px "IBM Plex Mono",
+          monospace;
+        color: var(--muted);
+        letter-spacing: 0.12em;
+        margin-top: 12px;
+      }
+      .float {
+        position: absolute;
+        background: white;
+        border-radius: 12px;
+        padding: 12px 16px;
+        font-size: 12px;
+        box-shadow: 0 8px 24px #172c5120;
+      }
+      .float.one {
+        top: 30px;
+        left: -25px;
+      }
+      .float.two {
+        bottom: 35px;
+        right: -20px;
+      }
+      .strip {
+        padding: 20px;
+        text-align: center;
+        border-block: 1px solid var(--line);
+        font:
+          10px "IBM Plex Mono",
+          monospace;
+        letter-spacing: 0.13em;
+        color: var(--muted);
+      }
+      .grid {
+        display: grid;
+        gap: 22px;
+      }
+      .two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .three {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .card {
+        padding: 28px;
+        border: 1px solid var(--line);
+        border-radius: 23px;
+        background: linear-gradient(130deg, #ffffffd9, #ffffff70);
+        transition:
+          transform 0.2s,
+          border-color 0.2s;
+      }
+      .card:hover {
+        transform: translateY(-3px);
+        border-color: #bccdf0;
+      }
+      .card p {
+        font-size: 14px;
+      }
+      .space {
+        margin-top: 38px;
+      }
+      .meta {
+        color: var(--blue);
+        font-size: 10px;
+        margin: 18px 0 12px;
+      }
+      .thumb {
+        border: 1px solid var(--line);
+        border-top: 26px solid white;
+        aspect-ratio: 16/9;
+        border-radius: 12px;
+        background: linear-gradient(125deg, #dbe7ff, #f5f7ff);
+        display: grid;
+        place-items: center;
+        position: relative;
+        font:
+          10px "IBM Plex Mono",
+          monospace;
+        letter-spacing: 0.08em;
+        color: #6c80aa;
+      }
+      .thumb:before {
+        content: "● ● ●";
+        position: absolute;
+        top: -22px;
+        left: 12px;
+        color: #7b9fed;
+        letter-spacing: 3px;
+      }
+      .thumb.company {
+        background:
+          linear-gradient(#7190c10c 1px, transparent 1px),
+          linear-gradient(90deg, #7190c10c 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      .role {
+        margin-top: 15px;
+      }
+      .step {
+        position: relative;
+        padding-top: 60px;
+      }
+      .num {
+        position: absolute;
+        right: 20px;
+        top: 0;
+        font:
+          700 65px "Space Grotesk",
+          sans-serif;
+        color: #eff2f8;
+      }
+      .step h3,
+      .step p {
+        position: relative;
+      }
+      .timeline {
+        border-left: 1px solid #cbd8f4;
+        padding-left: 30px;
+      }
+      .list {
+        padding-left: 20px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .list li {
+        margin: 10px 0;
+      }
+      .contact-link {
+        display: block;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #ffffffa0;
+        padding: 14px 18px;
+        margin: 12px 0;
+        font-size: 14px;
+      }
+      form {
+        display: grid;
+        gap: 12px;
+      }
+      input,
+      textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        background: #f8faff;
+        padding: 13px 15px;
+        border-radius: 12px;
+        font:
+          14px "DM Sans",
+          sans-serif;
+        color: var(--ink);
+      }
+      label {
+        color: var(--muted);
+      }
+      .note {
+        font-size: 12px !important;
+        color: var(--muted);
+      }
+      footer {
+        padding: 50px 0;
+        border-top: 1px solid var(--line);
+        font-size: 12px;
+      }
+      footer .wrap {
+        display: flex;
+        justify-content: space-between;
+        gap: 25px;
+        flex-wrap: wrap;
+      }
+      :focus-visible {
+        outline: 3px solid #2862ec;
+        outline-offset: 4px;
+      }
+      .skip {
+        position: absolute;
+        left: -9999px;
+      }
+      .skip:focus {
+        left: 10px;
+        top: 10px;
+        background: white;
+        padding: 12px;
+        z-index: 100;
+      }
+      @media (max-width: 900px) {
+        nav {
+          gap: 12px;
+          font-size: 12px;
+        }
+        .hero-grid {
+          gap: 35px;
+        }
+        .three {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 680px) {
+        nav {
+          display: none;
+        }
+        .hero-grid,
+        .two,
+        .three {
+          grid-template-columns: 1fr;
+        }
+        .portrait {
+          width: 75%;
+          max-width: 300px;
+          margin: 25px auto;
+        }
+        .hero {
+          padding-top: 40px;
+        }
+        h1 {
+          font-size: clamp(43px, 11.5vw, 66px);
+        }
+        section {
+          padding: 60px 0;
+        }
+        .card {
+          padding: 23px;
+        }
+        .wrap {
+          width: calc(100% - 36px);
+        }
+        .strip {
+          line-height: 2.5;
+        }
+        .float.two {
+          right: -15px;
+        }
+        header .btn {
+          padding: 9px 15px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        * {
+          transition: none !important;
+        }
+      }
+
+      /* Education */
+.edu-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.edu-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #eaf0ff;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+}
+.badge {
+  font: 500 10px "IBM Plex Mono", monospace;
+  padding: 4px 12px;
+  border-radius: 30px;
+  border: 1px solid var(--line);
+  background: #f0f3f8;
+  color: #505c72;
+}
+.badge.live {
+  background: #e6f8ee;
+  border-color: #a9e3c2;
+  color: #12804a;
+}
+.edu-school {
+  font-size: 14px;
+  color: var(--ink);
+}
+.edu-foot {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font: 12px "IBM Plex Mono", monospace;
+  color: var(--muted);
+}
+.edu-foot strong {
+  color: var(--ink);
+}
+
+/* Internship */
+.intern {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 36px;
+  align-items: start;
+}
+.intern-project {
+  background: #f3f6ff;
+  border: 1px solid #d6e0f7;
+  border-radius: 18px;
+  padding: 24px;
+}
+.intern-project .meta {
+  margin-top: 0;
+}
+.intern-project .tags {
+  margin: 14px 0 18px;
+}
+@media (max-width: 680px) {
+  .intern {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header>
+      <div class="wrap">
+        <a class="brand" href="#home"
+          ><span class="mark">K</span>Krisha Maradiya</a
+        >
+        <nav aria-label="Main navigation">
+          <a href="#about">About</a><a href="#skills">Skills</a
+          ><a href="#projects">Projects</a><a href="#experience">Experience</a
+          ><a href="#workflow">Workflow</a>
+        </nav>
+        <a class="btn primary" href="#contact">Contact Me ↗</a>
+      </div>
+    </header>
+    <main id="main">
+      <section class="hero" id="home">
+        <div class="wrap hero-grid">
+          <div>
+            <div class="eyebrow">Krisha · WordPress Front-End Designer</div>
+            <h1>
+              WordPress<br /><span class="blue">Front-End<br />Designer</span>
+              <br />Crafting Modern<br /><span class="outline"
+                >Digital Experiences.</span
+              >
+            </h1>
+            <p>
+              I’m a WordPress Front-End Designer with 2.5 years of experience
+              building responsive, user-friendly, and performance-focused
+              websites.
+            </p>
+            <div class="actions">
+              <a class="btn primary" href="#projects">View My Work ↗</a
+              ><a class="btn" href="#contact">Contact Me</a>
+            </div>
+            <div class="tags">
+              <span class="tag">WordPress</span
+              ><span class="tag">Elementor</span
+              ><span class="tag">Responsive Design</span
+              ><span class="tag">Website Optimization</span>
+            </div>
+          </div>
+          <div
+            class="portrait"
+            role="img"
+            aria-label="Placeholder for your professional portrait"
+          >
+            <div class="float one">2.5 Years<br />Experience</div>
+            <span class="mark">K</span>
+            <h3>Krisha</h3>            
+            <div class="float two">Figma → WordPress / Wordpress Designer</div>
+          </div>
+        </div>
+      </section>
+      <div class="strip">
+        WORDPRESS　 ✦　 ELEMENTOR PRO　 ✦　 GUTENBERG　 ✦　 FIGMA TO WORDPRESS　
+        ✦　 RESPONSIVE DESIGN + LAYOUTS　 ✦　 WEBSITE SPEED OPTIMIZATION　 ✦　
+        WOOCOMMERCE　 ✦　 DIVI　 ✦　 WPBAKERY　 ✦　 CLOUDFLARE　 ✦　 GIT　　
+        ✦UNBOUNCE　
+      </div>
+      <section id="about">
+        <div class="wrap">
+          <div class="eyebrow">About Me</div>
+          <h2>Designing WordPress websites people enjoy using</h2>
+          <div class="grid two space">
+            <div class="card">
+              <h3>Thoughtful layouts. Practical builds.</h3>
+              <p>
+                I’m a WordPress Front-End Designer with 2.5 years of experience
+                designing and building responsive, user-friendly websites.
+              </p>
+              <p>
+                My work includes converting Figma designs into WordPress pages,
+                refining layouts across screen sizes, and improving usability
+                and page performance.
+              </p>
+              <p>
+                I focus on clear content, consistent spacing, and maintainable
+                pages using Elementor, Gutenberg, and other page builders.
+              </p>
+              <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+
+<div class="signature">Krisha</div>
+
+<style>
+  .signature {
+    font-family: 'Mrs Saint Delafield', cursive;
+    font-size: 64px;
+    color: #1a1a1a;
+    transform: rotate(-4deg);
+    display: inline-block;
+  }
+</style>
+            </div>
+            <div class="grid">
+              <div class="card">
+                <h3>Figma → WordPress</h3>
+                <p>Translating designs into responsive pages.</p>
+              </div>
+              <div class="card">
+                <h3>Speed & basic SEO</h3>
+                <p>
+                  Attention to image sizes, page structure, and on-page
+                  fundamentals.
+                </p>
+              </div>
+              <div class="card">
+                <h3>Content & pages</h3>
+                <p>Updating and maintaining WordPress content and layouts.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+   
+      <!-- Years of experience       -->
+      <section id="experience">
+        <div class="wrap">
+          <div class="eyebrow">Professional Experience</div>
+          <h2>
+            Two years of building, refining, and maintaining WordPress websites
+          </h2>
+          <div class="timeline space">
+            <article class="card">
+              <div class="meta">January 2025 – Present</div>
+              <h3>WordPress Front-End Designer</h3>
+              <p><strong>Grewon Technologies</strong></p>
+              <ul class="list">
+                <li>Designing and building WordPress pages.</li>
+                <li>
+                  Creating responsive layouts with Elementor, Gutenberg, and
+                  other page builders.
+                </li>
+                <li>Converting Figma designs into WordPress pages.</li>
+                <li>Improving website speed and usability.</li>
+                <li>Implementing on-page SEO best practices.</li>
+                <li>Maintaining and updating existing websites.</li>
+              </ul>
+            </article>
+          </div>
+           <div class="timeline space">
+            <article class="card">
+              <div class="meta">July 2024 – December 2024</div>
+              <h3>WordPress Front-End Designer</h3>
+              <p><strong>Atmiya Infosoft</strong></p>
+              <ul class="list">
+                <li>Designing and building WordPress pages.</li>
+                <li>
+                  Creating responsive layouts with Elementor, Gutenberg.                  
+                </li>
+                <li>Converting Figma designs into WordPress pages.</li>
+                <li>Improving website speed and usability.</li>                
+              </ul>
+            </article>
+          </div>  
+        </div>
+        
+      </section>
+
+         <section id="skills">
+        <div class="wrap">
+          <div class="eyebrow">Skills & Technologies</div>
+          <h2>The tools I use to build WordPress websites</h2>
+          <p>No inflated percentages. JavaScript knowledge is basic.</p>
+          <div class="grid three space">
+            <div class="card">
+              <h3>Front-End Skills</h3>
+              <div class="tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>                
+                <span class="tag">Bootstrap</span
+                ><span class="tag">Responsive Web Design</span>                                                                             
+                </span>
+              </div>
+            </div>
+            <div class="card">
+              <h3>WordPress & Page Builders</h3>
+              <div class="tags">                
+                <span class="tag">Gutenberg</span
+                ><span class="tag">Elementor</span
+                ><span class="tag">Elementor Pro</span
+                ><span class="tag">Beaver Builder</span>
+                 <span class="tag">Unbounce Landing page</span> 
+                  <span class="tag">Woocommerce</span>                  
+                <span class="tag">Divi</span>                  
+                <span class="tag">Wpbakery</span>   
+                <span class="tag">Yoast SEO / RANK MATH SEO</span>                   
+              </div>
+            </div>
+            <div class="card">
+              <h3>Additional Skills</h3>
+              <div class="tags">
+                <span class="tag">Figma to Elementor Conversion</span
+                ><span class="tag">Website Speed Optimization</span
+                ><span class="tag">On-Page SEO Fundamentals</span
+                ><span class="tag">Cross-Browser Compatibility</span
+                ><span class="tag">Website Layout and UI Design</span
+                ><span class="tag">WordPress Content and Page Management</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>  
+      <section id="projects">
+        <div class="wrap">
+          <div class="eyebrow">Current Company</div>
+          <h2>Projects & Experience at My Current Company</h2>
+          <p class="lead">
+            Selected websites I have worked on at my current company.
+          </p>
+          <div class="grid two space">
+            <article class="card">
+              <div class="meta">aom.org</div>
+              <h3>Academy of Management (AOM)</h3>
+              <ul class="list">
+                <li>
+                  Website of the world’s leading association for management
+                  scholars (21,000+ members, 120+ countries).
+                </li>
+                <li>
+                  Built on WordPress using Gutenberg blocks and Full Site
+                  Editing.
+                </li>
+                <li>
+                  Custom child theme with header/footer templates and
+                  <code>theme.json</code> presets.
+                </li>
+                <li>
+                  Covers publications, events, communities, career services and
+                  membership. Responsive design, hosted on WP Engine.
+                </li>
+              </ul>
+              <div class="tags">
+                <span class="tag">WordPress</span
+                ><span class="tag">Gutenberg</span
+                ><span class="tag">Full Site Editing</span
+                ><span class="tag">Child Theme</span>
+                <span class="tag">HTML5 , CSS3</span>                
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="meta">thedrivinglicence.com</div>
+              <h3>The Driving Licence</h3>
+              <ul class="list">
+                <li>
+                  Learning platform for driving licence theory test preparation,
+                  covering 40+ countries (India, USA, Italy, Austria, Germany
+                  and more).
+                </li>
+                <li>
+                  Free practice tests with clear answer explanations and
+                  retests.
+                </li>
+                <li>
+                  Road signs guide by category, plus driving rules and Driving
+                  Authority Office (RTO) guides.
+                </li>
+                <li>
+                  Country-wise WordPress structure, SEO-optimised with FAQ
+                  sections and a mobile-friendly layout.
+                </li>
+              </ul>
+              <div class="tags">
+                <span class="tag">WordPress</span><span class="tag">SEO</span
+                ><span class="tag">JSON</span
+                ><span class="tag">Multi-country Content</span>
+                <span class="tag">HTML5 , CSS3</span> 
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="meta">stockbazar.app</div>
+              <h3>StockBazar</h3>
+              <ul class="list">
+                <li>
+                  Financial data website for the global economic calendar and
+                  market alerts.
+                </li>
+                <li>
+                  Data is collected with a scraper, exported as JSON and
+                  imported into the database automatically.
+                </li>
+                <li>
+                  Pages show database data in dynamic tables: economic events,
+                  earnings, dividends, splits, holidays, IPOs and mutual funds.
+                </li>
+                <li>Multi-country market data (India, USA, UK and more).</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">Scraper</span><span class="tag">JSON</span
+                ><span class="tag">Database</span
+                ><span class="tag">Dynamic Tables</span>
+                <span class="tag">HTML5 , CSS3</span> 
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="meta">snaptikinsta.com</div>
+              <h3>SnapTikInsta</h3>
+              <ul class="list">
+                <li>
+                  All-in-one social media video downloader for TikTok,
+                  Instagram, Facebook, Snapchat, Twitter and Threads.
+                </li>
+                <li>No watermark, no app and no login needed.</li>
+                <li>
+                  Extra tools like TikTok to MP3, Story and Photo downloaders.
+                </li>
+                <li>
+                  Multi-language site (12+ languages), mobile and desktop
+                  friendly.
+                </li>
+              </ul>
+              <div class="tags">
+                <span class="tag">WordPress</span
+                ><span class="tag">Elementor</span
+                ><span class="tag">Multi-language</span>
+                <span class="tag">Polylang</span>
+                <span class="tag">HTML5 , CSS3</span> 
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="meta">snaptiksaver.com</div>
+              <h3>SnapTikSaver</h3>
+              <ul class="list">
+                <li>
+                  TikTok video downloader without watermark. Free, fast, no app
+                  or login needed.
+                </li>
+                <li>
+                  Supports TikTok video, MP3, slideshow, story and Douyin, plus
+                  an Instagram video tool.
+                </li>
+                <li>
+                  Multi-language site (English, Japanese, Italian and more).
+                </li>
+                <li>Works on mobile and desktop, with SEO-friendly content.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">WordPress</span><span class="tag">SEO</span
+                ><span class="tag">Multi-language</span>
+                <span class="tag">Polylang</span>
+                <span class="tag">HTML5 , CSS3</span> 
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI Skillls  -->
+        <section id="ai-skills">
+        <div class="wrap">
+          <div class="eyebrow">AI Skills</div>
+          <h2>Using AI tools to work faster and smarter</h2>
+          <p class="lead">
+            I use AI to speed up development, debugging, and content work. Every 
+            output is reviewed, tested, and refined by me before it goes live.
+          </p>
+          <div class="grid three space">
+            <div class="card">
+              <h3>AI-Assisted Coding</h3>
+              <p>
+                Using AI to build and debug the data side of websites, scraper, JSON export and automatic database import.
+                Also used for fixing layout issues and WordPress customizations.
+              </p>
+              <div class="tags">
+                <span class="tag">Scraper Scripts</span><span class="tag">JSON Data</span
+                ><span class="tag">Database Import</span>
+                <span class="tag">Dynamic Tables</span>
+                <span class="tag">Debugging</span>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Prompt Writing</h3>
+              <p>Writing clear, specific prompts to get useful results.</p>
+              <div class="tags">
+                <span class="tag">Prompting</span
+                ><span class="tag">Refining Results</span>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Content & SEO Drafts</h3>
+              <p>
+                Drafting headings, meta descriptions and image alt text, then
+                editing them by hand.
+              </p>
+              <div class="tags">
+                <span class="tag">Meta Descriptions</span
+                ><span class="tag">Alt Text</span
+                ><span class="tag">On-Page SEO</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Internship details  -->
+       <section id="internship">
+  <div class="wrap">
+    <div class="eyebrow">Internship</div>
+    <h2>Where I started my career</h2>
+
+    <article class="card intern space">
+      <div>
+        <div class="meta">6 Months Internship</div>
+        <h3>Web Designer &amp; WordPress Designer</h3>
+        <p><strong>Golden Mace IT Solutions</strong> · Navsari</p>
+        <ul class="list">
+          <li>Worked as a web designer and WordPress designer.</li>
+          <li>Built and styled WordPress pages.</li>
+          <li>Learned real client workflow and team practices.</li>
+        </ul>
+      </div>
+
+      <div class="intern-project">
+        <div class="meta">Internship Project</div>
+        <h3>KiviCare</h3>
+        <p>
+          Clinic and patient management solution built on WordPress, with
+          online appointments, patient records, and telemedicine.
+        </p>
+        <div class="tags">
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">Bootstrap</span>
+          <span class="tag">SCSS</span>
+          <span class="tag">Responsive Design</span>
+        </div>
+        <a class="btn primary" href="https://kivicare.io/" target="_blank" rel="noopener noreferrer" style="margin-top: 12px;">
+          Visit kivicare.io ↗
+        </a>
+      </div>
+    </article>
+  </div>
+</section>
+
+      <!-- Educational details  -->
+<section id="education">
+  <div class="wrap">
+    <div class="eyebrow">Education</div>
+    <h2>Academic background</h2>
+
+    <div class="grid two space">
+      <article class="card edu">
+        <div class="edu-top">
+          <span class="edu-icon">🎓</span>
+          <span class="badge done">Completed</span>
+        </div>
+        <div class="meta">Bachelor's Degree</div>
+        <h3>BCA</h3>
+        <p class="edu-school">
+          Naranlala College of Professional &amp; Applied Sciences, Navsari
+        </p>
+        <div class="edu-foot">
+          <span>CGPA</span><strong> </strong>
+        </div>
+      </article>
+
+      <article class="card edu">
+        <div class="edu-top">
+          <span class="edu-icon">🎓</span>
+          <span class="badge live">Completed</span>
+        </div>
+        <div class="meta">Master's Degree</div>
+        <h3>MCA</h3>
+        <p class="edu-school">
+          SCET University (Sarvajanik College of Engineering and Technology)
+        </p>
+        <div class="edu-foot">
+          <span>CGPA </span><strong></strong>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+      <!-- Contact US  -->
+          <section id="contact">
+        <div class="wrap">
+          <div class="grid two">
+            <div>
+              <div class="eyebrow">Get in Touch</div>
+              <h2>Have a Website Project in Mind?</h2>
+              <p>
+                I’m open to WordPress front-end design opportunities and website
+                projects.
+              </p>
+              <a class="contact-link" href="mailto:maradiyakrisha123@gmail.com"
+                >Email ↗<br />maradiyakrisha123@gmail.com</a
+              >
+
+              <div class="contact-link">
+                LinkedIn —
+                <a
+                  href="https://in.linkedin.com/in/krisha-maradiya-a08133251"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><strong>Krisha Maradiya</strong></a
+                >
+              </div>
+              <div class="contact-link">GitHub — [optional profile link]</div>
+              <p class="note">
+                Download CV — add your PDF and link before publishing.
+              </p>
+            </div>
+            <form
+              class="card"
+              id="contact-form"
+              action="https://formsubmit.co/maradiyakrisha123@gmail.com"
+              method="POST"
+            >
+              <h3>Send me a message</h3>
+              <p class="note">
+                Send a message directly to maradiyakrisha123@gmail.com.
+              </p>
+              <label for="name">Krisha</label
+              ><input
+                id="name"
+                name="name"
+                autocomplete="name"
+                required
+                placeholder="Krisha"
+              /><label for="email">Your email</label
+              ><input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                placeholder="you@example.com"
+              /><label for="message">Project details</label
+              ><textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                placeholder="Tell me about your project"
+              ></textarea>
+              <input
+                type="hidden"
+                name="_subject"
+                value="New portfolio contact message"
+              />
+              <button type="submit" class="btn primary">Send Message ↗</button>
+              <p id="form-status" role="status" class="note"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap">
+        
+        <nav aria-label="Footer navigation">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <p>© <span id="year"></span> Krisha. All rights reserved.</p>
+        <a href="#home" aria-label="Back to top">Back to top ↑</a>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      const form = document.getElementById("contact-form");
+      const status = document.getElementById("form-status");
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const button = form.querySelector("button[type=submit]");
+        button.disabled = true;
+        status.textContent = "Sending your message…";
+
+        try {
+          const response = await fetch(
+            "https://formsubmit.co/ajax/maradiyakrisha123@gmail.com",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+              body: JSON.stringify(Object.fromEntries(new FormData(form))),
+            },
+          );
+          const result = await response.json();
+          if (!response.ok || result.success === false) {
+            throw new Error(result.message || "Message could not be sent");
+          }
+          form.reset();
+          status.textContent = "Thanks! Your message was sent.";
+        } catch (error) {
+          status.textContent =
+            "Could not send your message. Please email maradiyakrisha123@gmail.com directly.";
+        } finally {
+          button.disabled = false;
+        }
+      });
+    </script>
+  </body>
+</html>
+
+<!-- https://aomorg.wpenginepowered.com/publications/journals/discoveries/discoveries-editorial-team/
+https://aomorg.wpenginepowered.com/publications/journals/collections/
+https://aomorg.wpenginepowered.com/publications/journals/review/amr-teaching-resources/
+https://aomorg.wpenginepowered.com/about-aom/awards-and-recognition/george-r-terry-book-award/2025-george-r-terry-book-award/ 
+https://aomorg.wpenginepowered.com/about-aom/awards-and-recognition/publication-awards/2023-publication-awards/
+-->
