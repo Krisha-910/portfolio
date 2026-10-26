@@ -3,31 +3,38 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-   <title>Krisha | WordPress Front-End Designer</title>
-<meta
-  name="description"
-  content="WordPress Front-End Designer with 2+ years of experience building responsive, user-friendly, performance-focused websites."
-/>
+    <title>Krisha | WordPress Front-End Designer</title>
+    <meta
+      name="description"
+      content="WordPress Front-End Designer with 2+ years of experience building responsive, user-friendly, performance-focused websites."
+    />
 
-<link
-  rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2312213b'/%3E%3Ctext x='50' y='70' font-size='62' font-weight='700' text-anchor='middle' fill='%2366c4ff' font-family='sans-serif'%3EK%3C/text%3E%3C/svg%3E"
-/>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2312213b'/%3E%3Ctext x='50' y='70' font-size='62' font-weight='700' text-anchor='middle' fill='%2366c4ff' font-family='sans-serif'%3EK%3C/text%3E%3C/svg%3E"
+    />
 
-<!-- Link preview (WhatsApp, LinkedIn, Slack) -->
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Krisha Maradiya | WordPress Front-End Designer" />
-<meta
-  property="og:description"
-  content="2+ years of experience building responsive WordPress websites with Elementor, Gutenberg and Figma. View my work."
-/>
-<meta property="og:url" content="https://portfolio-krisha-910.vercel.app/" />
-<meta name="theme-color" content="#f8f9fe" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
-  rel="stylesheet"
-/>
+    <!-- Link preview (WhatsApp, LinkedIn, Slack) -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Krisha Maradiya | WordPress Front-End Designer"
+    />
+    <meta
+      property="og:description"
+      content="2+ years of experience building responsive WordPress websites with Elementor, Gutenberg and Figma. View my work."
+    />
+    <meta
+      property="og:url"
+      content="https://portfolio-krisha-910.vercel.app/"
+    />
+    <meta name="theme-color" content="#f8f9fe" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <style>
       :root {
         --blue: #2862ec;
@@ -446,11 +453,78 @@
         .three {
           grid-template-columns: 1fr 1fr;
         }
+        .menu-btn {
+          display: none;
+        }
+      }
+      @media (min-width: 681px) {
+        .menu-btn {
+          display: none !important;
+        }
       }
       @media (max-width: 680px) {
+        .brand-name {
+          display: none;
+        }
+        .menu-btn {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 5px;
+          width: 42px;
+          height: 42px;
+          padding: 0 11px;
+          border: 1px solid var(--line);
+          border-radius: 12px;
+          background: #fff;
+          cursor: pointer;
+        }
+        .menu-btn span {
+          height: 2px;
+          background: var(--ink);
+          border-radius: 2px;
+          transition:
+            transform 0.2s,
+            opacity 0.2s;
+        }
+        header.open .menu-btn span:nth-child(1) {
+          transform: translateY(7px) rotate(45deg);
+        }
+        header.open .menu-btn span:nth-child(2) {
+          opacity: 0;
+        }
+        header.open .menu-btn span:nth-child(3) {
+          transform: translateY(-7px) rotate(-45deg);
+        }
+        header .wrap {
+          gap: 10px;
+        }
+        .brand {
+          font-size: 15px;
+          margin-right: auto;
+        }
         nav {
-          overflow-x: auto;
-          white-space: nowrap;
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          flex-direction: column;
+          gap: 0;
+          background: #f8f9fe;
+          border-bottom: 1px solid var(--line);
+          padding: 8px 18px 16px;
+          font-size: 15px;
+        }
+        header.open nav {
+          display: flex;
+        }
+        nav a {
+          padding: 12px 0;
+          border-bottom: 1px solid var(--line);
+        }
+        nav a:last-child {
+          border-bottom: 0;
         }
         .hero-grid,
         .two,
@@ -579,13 +653,22 @@
     <header>
       <div class="wrap">
         <a class="brand" href="#home"
-          ><span class="mark">K</span>Krisha Maradiya</a
+          ><span class="mark">K</span
+          ><span class="brand-name">Krisha Maradiya</span></a
         >
-        <nav aria-label="Main navigation">
+        <nav id="site-nav" aria-label="Main navigation">
           <a href="#about">About</a><a href="#skills">Skills</a
-          ><a href="#projects">Projects</a><a href="#experience">Experience</a>          
+          ><a href="#projects">Projects</a><a href="#experience">Experience</a>
         </nav>
         <a class="btn primary" href="#contact">Contact Me ↗</a>
+        <button
+          class="menu-btn"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </header>
     <main id="main">
@@ -630,8 +713,8 @@
       <div class="strip">
         WORDPRESS　 ✦　 ELEMENTOR PRO　 ✦　 GUTENBERG　 ✦　 FIGMA TO WORDPRESS　
         ✦　 RESPONSIVE DESIGN ✦ LAYOUTS　 ✦　 WEBSITE SPEED OPTIMIZATION　 ✦　
-        WOOCOMMERCE　 ✦　 DIVI　 ✦　 WPBAKERY　 ✦　 CLOUDFLARE　 ✦　
-        GIT ✦ UNBOUNCE　
+        WOOCOMMERCE　 ✦　 DIVI　 ✦　 WPBAKERY　 ✦　 CLOUDFLARE　 ✦　 GIT ✦
+        UNBOUNCE　
       </div>
       <section id="about">
         <div class="wrap">
@@ -909,7 +992,7 @@
         </div>
       </section>
 
-       <!-- Internship details  -->
+      <!-- Internship details  -->
       <section id="internship">
         <div class="wrap">
           <div class="eyebrow">Internship</div>
@@ -1002,7 +1085,7 @@
             </div>
           </div>
         </div>
-      </section>     
+      </section>
 
       <!-- Educational details  -->
       <section id="education">
@@ -1066,7 +1149,9 @@
                   ><strong>Krisha Maradiya</strong></a
                 >
               </div>
-                <a class="btn primary" href="Krisha-Maradiya-CV.pdf" download>Download CV ↓</a>
+              <a class="btn primary" href="Krisha-Maradiya-CV.pdf" download
+                >Download CV ↓</a
+              >
             </div>
             <form
               class="card"
@@ -1126,6 +1211,19 @@
     </footer>
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+      const siteHeader = document.querySelector("header");
+      const menuBtn = document.querySelector(".menu-btn");
+      menuBtn.addEventListener("click", () => {
+        const open = siteHeader.classList.toggle("open");
+        menuBtn.setAttribute("aria-expanded", open);
+        menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      });
+      document.querySelectorAll("#site-nav a").forEach((a) =>
+        a.addEventListener("click", () => {
+          siteHeader.classList.remove("open");
+          menuBtn.setAttribute("aria-expanded", false);
+        }),
+      );
       const form = document.getElementById("contact-form");
       const status = document.getElementById("form-status");
       form.addEventListener("submit", async function (e) {
@@ -1162,10 +1260,3 @@
     </script>
   </body>
 </html>
-
-<!-- https://aomorg.wpenginepowered.com/publications/journals/discoveries/discoveries-editorial-team/
-https://aomorg.wpenginepowered.com/publications/journals/collections/
-https://aomorg.wpenginepowered.com/publications/journals/review/amr-teaching-resources/
-https://aomorg.wpenginepowered.com/about-aom/awards-and-recognition/george-r-terry-book-award/2025-george-r-terry-book-award/ 
-https://aomorg.wpenginepowered.com/about-aom/awards-and-recognition/publication-awards/2023-publication-awards/
--->
