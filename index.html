@@ -3,17 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Krisha | WordPress Front-End Designer</title>
-    <meta
-      name="description"
-      content="WordPress Front-End Designer with 2 years of experience building responsive, user-friendly websites."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+   <title>Krisha | WordPress Front-End Designer</title>
+<meta
+  name="description"
+  content="WordPress Front-End Designer with 2+ years of experience building responsive, user-friendly, performance-focused websites."
+/>
+
+<link
+  rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2312213b'/%3E%3Ctext x='50' y='70' font-size='62' font-weight='700' text-anchor='middle' fill='%2366c4ff' font-family='sans-serif'%3EK%3C/text%3E%3C/svg%3E"
+/>
+
+<!-- Link preview (WhatsApp, LinkedIn, Slack) -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Krisha Maradiya | WordPress Front-End Designer" />
+<meta
+  property="og:description"
+  content="2+ years of experience building responsive WordPress websites with Elementor, Gutenberg and Figma. View my work."
+/>
+<meta property="og:url" content="https://portfolio-krisha-910.vercel.app/" />
+<meta name="theme-color" content="#f8f9fe" />
     <style>
       :root {
         --blue: #2862ec;
@@ -435,7 +443,8 @@
       }
       @media (max-width: 680px) {
         nav {
-          display: none;
+          overflow-x: auto;
+          white-space: nowrap;
         }
         .hero-grid,
         .two,
@@ -482,77 +491,81 @@
       }
 
       /* Education */
-.edu-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--line);
-}
-.edu-icon {
-  width: 46px;
-  height: 46px;
-  border-radius: 12px;
-  background: #eaf0ff;
-  display: grid;
-  place-items: center;
-  font-size: 22px;
-}
-.badge {
-  font: 500 10px "IBM Plex Mono", monospace;
-  padding: 4px 12px;
-  border-radius: 30px;
-  border: 1px solid var(--line);
-  background: #f0f3f8;
-  color: #505c72;
-}
-.badge.live {
-  background: #e6f8ee;
-  border-color: #a9e3c2;
-  color: #12804a;
-}
-.edu-school {
-  font-size: 14px;
-  color: var(--ink);
-}
-.edu-foot {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  padding-top: 16px;
-  border-top: 1px solid var(--line);
-  font: 12px "IBM Plex Mono", monospace;
-  color: var(--muted);
-}
-.edu-foot strong {
-  color: var(--ink);
-}
+      .edu-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--line);
+      }
+      .edu-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        background: #eaf0ff;
+        display: grid;
+        place-items: center;
+        font-size: 22px;
+      }
+      .badge {
+        font:
+          500 10px "IBM Plex Mono",
+          monospace;
+        padding: 4px 12px;
+        border-radius: 30px;
+        border: 1px solid var(--line);
+        background: #f0f3f8;
+        color: #505c72;
+      }
+      .badge.live {
+        background: #e6f8ee;
+        border-color: #a9e3c2;
+        color: #12804a;
+      }
+      .edu-school {
+        font-size: 14px;
+        color: var(--ink);
+      }
+      .edu-foot {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+        font:
+          12px "IBM Plex Mono",
+          monospace;
+        color: var(--muted);
+      }
+      .edu-foot strong {
+        color: var(--ink);
+      }
 
-/* Internship */
-.intern {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 36px;
-  align-items: start;
-}
-.intern-project {
-  background: #f3f6ff;
-  border: 1px solid #d6e0f7;
-  border-radius: 18px;
-  padding: 24px;
-}
-.intern-project .meta {
-  margin-top: 0;
-}
-.intern-project .tags {
-  margin: 14px 0 18px;
-}
-@media (max-width: 680px) {
-  .intern {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-}
+      /* Internship */
+      .intern {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 36px;
+        align-items: start;
+      }
+      .intern-project {
+        background: #f3f6ff;
+        border: 1px solid #d6e0f7;
+        border-radius: 18px;
+        padding: 24px;
+      }
+      .intern-project .meta {
+        margin-top: 0;
+      }
+      .intern-project .tags {
+        margin: 14px 0 18px;
+      }
+      @media (max-width: 680px) {
+        .intern {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -564,8 +577,7 @@
         >
         <nav aria-label="Main navigation">
           <a href="#about">About</a><a href="#skills">Skills</a
-          ><a href="#projects">Projects</a><a href="#experience">Experience</a
-          ><a href="#workflow">Workflow</a>
+          ><a href="#projects">Projects</a><a href="#experience">Experience</a>          
         </nav>
         <a class="btn primary" href="#contact">Contact Me ↗</a>
       </div>
@@ -582,7 +594,7 @@
               >
             </h1>
             <p>
-              I’m a WordPress Front-End Designer with 2.5 years of experience
+              I’m a WordPress Front-End Designer with 2+ years of experience
               building responsive, user-friendly, and performance-focused
               websites.
             </p>
@@ -600,20 +612,20 @@
           <div
             class="portrait"
             role="img"
-            aria-label="Placeholder for your professional portrait"
+            aria-label="Placeholder for professional portrait"
           >
-            <div class="float one">2.5 Years<br />Experience</div>
+            <div class="float one">2+<br />Experience</div>
             <span class="mark">K</span>
-            <h3>Krisha</h3>            
-            <div class="float two">Figma → WordPress / Wordpress Designer</div>
+            <h3>Krisha</h3>
+            <div class="float two">Figma → WordPress</div>
           </div>
         </div>
       </section>
       <div class="strip">
         WORDPRESS　 ✦　 ELEMENTOR PRO　 ✦　 GUTENBERG　 ✦　 FIGMA TO WORDPRESS　
-        ✦　 RESPONSIVE DESIGN + LAYOUTS　 ✦　 WEBSITE SPEED OPTIMIZATION　 ✦　
-        WOOCOMMERCE　 ✦　 DIVI　 ✦　 WPBAKERY　 ✦　 CLOUDFLARE　 ✦　 GIT　　
-        ✦UNBOUNCE　
+        ✦　 RESPONSIVE DESIGN ✦ LAYOUTS　 ✦　 WEBSITE SPEED OPTIMIZATION　 ✦　
+        WOOCOMMERCE　 ✦　 DIVI　 ✦　 WPBAKERY　 ✦　 CLOUDFLARE　 ✦　
+        GIT ✦ UNBOUNCE　
       </div>
       <section id="about">
         <div class="wrap">
@@ -623,7 +635,7 @@
             <div class="card">
               <h3>Thoughtful layouts. Practical builds.</h3>
               <p>
-                I’m a WordPress Front-End Designer with 2.5 years of experience
+                I’m a WordPress Front-End Designer with 2+ years of experience
                 designing and building responsive, user-friendly websites.
               </p>
               <p>
@@ -635,19 +647,6 @@
                 I focus on clear content, consistent spacing, and maintainable
                 pages using Elementor, Gutenberg, and other page builders.
               </p>
-              <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
-
-<div class="signature">Krisha</div>
-
-<style>
-  .signature {
-    font-family: 'Mrs Saint Delafield', cursive;
-    font-size: 64px;
-    color: #1a1a1a;
-    transform: rotate(-4deg);
-    display: inline-block;
-  }
-</style>
             </div>
             <div class="grid">
               <div class="card">
@@ -655,7 +654,7 @@
                 <p>Translating designs into responsive pages.</p>
               </div>
               <div class="card">
-                <h3>Speed & basic SEO</h3>
+                <h3>Speed & SEO</h3>
                 <p>
                   Attention to image sizes, page structure, and on-page
                   fundamentals.
@@ -669,7 +668,7 @@
           </div>
         </div>
       </section>
-   
+
       <!-- Years of experience       -->
       <section id="experience">
         <div class="wrap">
@@ -695,53 +694,49 @@
               </ul>
             </article>
           </div>
-           <div class="timeline space">
+          <div class="timeline space">
             <article class="card">
               <div class="meta">July 2024 – December 2024</div>
               <h3>WordPress Front-End Designer</h3>
               <p><strong>Atmiya Infosoft</strong></p>
               <ul class="list">
                 <li>Designing and building WordPress pages.</li>
-                <li>
-                  Creating responsive layouts with Elementor, Gutenberg.                  
-                </li>
+                <li>Creating responsive layouts with Elementor, Gutenberg.</li>
                 <li>Converting Figma designs into WordPress pages.</li>
-                <li>Improving website speed and usability.</li>                
+                <li>Improving website speed and usability.</li>
               </ul>
             </article>
-          </div>  
+          </div>
         </div>
-        
       </section>
 
-         <section id="skills">
+      <section id="skills">
         <div class="wrap">
           <div class="eyebrow">Skills & Technologies</div>
           <h2>The tools I use to build WordPress websites</h2>
-          <p>No inflated percentages. JavaScript knowledge is basic.</p>
           <div class="grid three space">
             <div class="card">
               <h3>Front-End Skills</h3>
               <div class="tags">
                 <span class="tag">HTML5</span>
-                <span class="tag">CSS3</span>                
-                <span class="tag">Bootstrap</span
-                ><span class="tag">Responsive Web Design</span>                                                                             
-                </span>
+                <span class="tag">CSS3</span>
+                <span class="tag">Bootstrap</span>
+                <span class="tag">JavaScript (Basic)</span>
+                <span class="tag">Responsive Web Design</span>
               </div>
             </div>
             <div class="card">
               <h3>WordPress & Page Builders</h3>
-              <div class="tags">                
+              <div class="tags">
                 <span class="tag">Gutenberg</span
                 ><span class="tag">Elementor</span
                 ><span class="tag">Elementor Pro</span
                 ><span class="tag">Beaver Builder</span>
-                 <span class="tag">Unbounce Landing page</span> 
-                  <span class="tag">Woocommerce</span>                  
-                <span class="tag">Divi</span>                  
-                <span class="tag">Wpbakery</span>   
-                <span class="tag">Yoast SEO / RANK MATH SEO</span>                   
+                <span class="tag">Unbounce Landing Pages</span>
+                <span class="tag">WooCommerce</span>
+                <span class="tag">Divi</span>
+                <span class="tag">WPBakery</span>
+                <span class="tag">Yoast SEO / Rank Math</span>
               </div>
             </div>
             <div class="card">
@@ -757,10 +752,12 @@
             </div>
           </div>
         </div>
-      </section>  
+      </section>
+
+      <!-- Projects  -->
       <section id="projects">
         <div class="wrap">
-          <div class="eyebrow">Current Company</div>
+          <div class="eyebrow">Projects</div>
           <h2>Projects & Experience at My Current Company</h2>
           <p class="lead">
             Selected websites I have worked on at my current company.
@@ -792,7 +789,7 @@
                 ><span class="tag">Gutenberg</span
                 ><span class="tag">Full Site Editing</span
                 ><span class="tag">Child Theme</span>
-                <span class="tag">HTML5 , CSS3</span>                
+                <span class="tag">HTML5, CSS3</span>
               </div>
             </article>
 
@@ -822,7 +819,7 @@
                 <span class="tag">WordPress</span><span class="tag">SEO</span
                 ><span class="tag">JSON</span
                 ><span class="tag">Multi-country Content</span>
-                <span class="tag">HTML5 , CSS3</span> 
+                <span class="tag">HTML5, CSS3</span>
               </div>
             </article>
 
@@ -848,7 +845,7 @@
                 <span class="tag">Scraper</span><span class="tag">JSON</span
                 ><span class="tag">Database</span
                 ><span class="tag">Dynamic Tables</span>
-                <span class="tag">HTML5 , CSS3</span> 
+                <span class="tag">HTML5, CSS3</span>
               </div>
             </article>
 
@@ -874,7 +871,7 @@
                 ><span class="tag">Elementor</span
                 ><span class="tag">Multi-language</span>
                 <span class="tag">Polylang</span>
-                <span class="tag">HTML5 , CSS3</span> 
+                <span class="tag">HTML5, CSS3</span>
               </div>
             </article>
 
@@ -899,31 +896,79 @@
                 <span class="tag">WordPress</span><span class="tag">SEO</span
                 ><span class="tag">Multi-language</span>
                 <span class="tag">Polylang</span>
-                <span class="tag">HTML5 , CSS3</span> 
+                <span class="tag">HTML5, CSS3</span>
               </div>
             </article>
           </div>
         </div>
       </section>
 
+       <!-- Internship details  -->
+      <section id="internship">
+        <div class="wrap">
+          <div class="eyebrow">Internship</div>
+          <h2>Where I started my career</h2>
+
+          <article class="card intern space">
+            <div>
+              <div class="meta">6 Months Internship</div>
+              <h3>Web Designer &amp; WordPress Designer</h3>
+              <p><strong>Golden Mace IT Solutions</strong> · Navsari</p>
+              <ul class="list">
+                <li>Worked as a web designer and WordPress designer.</li>
+                <li>Built and styled WordPress pages.</li>
+                <li>Learned real client workflow and team practices.</li>
+              </ul>
+            </div>
+
+            <div class="intern-project">
+              <div class="meta">Internship Project</div>
+              <h3>KiviCare</h3>
+              <p>
+                Clinic and patient management solution built on WordPress, with
+                online appointments, patient records, and telemedicine.
+              </p>
+              <div class="tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">Bootstrap</span>
+                <span class="tag">SCSS</span>
+                <span class="tag">Responsive Design</span>
+              </div>
+              <a
+                class="btn primary"
+                href="https://kivicare.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="margin-top: 12px"
+              >
+                Visit kivicare.io ↗
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <!-- AI Skillls  -->
-        <section id="ai-skills">
+      <section id="ai-skills">
         <div class="wrap">
           <div class="eyebrow">AI Skills</div>
           <h2>Using AI tools to work faster and smarter</h2>
           <p class="lead">
-            I use AI to speed up development, debugging, and content work. Every 
+            I use AI to speed up development, debugging, and content work. Every
             output is reviewed, tested, and refined by me before it goes live.
           </p>
           <div class="grid three space">
             <div class="card">
               <h3>AI-Assisted Coding</h3>
               <p>
-                Using AI to build and debug the data side of websites, scraper, JSON export and automatic database import.
-                Also used for fixing layout issues and WordPress customizations.
+                Using AI to build and debug the data side of websites, such as
+                the scraper, JSON export and automatic database import. Also
+                used for fixing layout issues and WordPress customizations.
               </p>
               <div class="tags">
-                <span class="tag">Scraper Scripts</span><span class="tag">JSON Data</span
+                <span class="tag">Scraper Scripts</span
+                ><span class="tag">JSON Data</span
                 ><span class="tag">Database Import</span>
                 <span class="tag">Dynamic Tables</span>
                 <span class="tag">Debugging</span>
@@ -951,90 +996,48 @@
             </div>
           </div>
         </div>
-      </section>
-
-      <!-- Internship details  -->
-       <section id="internship">
-  <div class="wrap">
-    <div class="eyebrow">Internship</div>
-    <h2>Where I started my career</h2>
-
-    <article class="card intern space">
-      <div>
-        <div class="meta">6 Months Internship</div>
-        <h3>Web Designer &amp; WordPress Designer</h3>
-        <p><strong>Golden Mace IT Solutions</strong> · Navsari</p>
-        <ul class="list">
-          <li>Worked as a web designer and WordPress designer.</li>
-          <li>Built and styled WordPress pages.</li>
-          <li>Learned real client workflow and team practices.</li>
-        </ul>
-      </div>
-
-      <div class="intern-project">
-        <div class="meta">Internship Project</div>
-        <h3>KiviCare</h3>
-        <p>
-          Clinic and patient management solution built on WordPress, with
-          online appointments, patient records, and telemedicine.
-        </p>
-        <div class="tags">
-          <span class="tag">HTML5</span>
-          <span class="tag">CSS3</span>
-          <span class="tag">Bootstrap</span>
-          <span class="tag">SCSS</span>
-          <span class="tag">Responsive Design</span>
-        </div>
-        <a class="btn primary" href="https://kivicare.io/" target="_blank" rel="noopener noreferrer" style="margin-top: 12px;">
-          Visit kivicare.io ↗
-        </a>
-      </div>
-    </article>
-  </div>
-</section>
+      </section>     
 
       <!-- Educational details  -->
-<section id="education">
-  <div class="wrap">
-    <div class="eyebrow">Education</div>
-    <h2>Academic background</h2>
+      <section id="education">
+        <div class="wrap">
+          <div class="eyebrow">Education</div>
+          <h2>Academic background</h2>
 
-    <div class="grid two space">
-      <article class="card edu">
-        <div class="edu-top">
-          <span class="edu-icon">🎓</span>
-          <span class="badge done">Completed</span>
-        </div>
-        <div class="meta">Bachelor's Degree</div>
-        <h3>BCA</h3>
-        <p class="edu-school">
-          Naranlala College of Professional &amp; Applied Sciences, Navsari
-        </p>
-        <div class="edu-foot">
-          <span>CGPA</span><strong> </strong>
-        </div>
-      </article>
+          <div class="grid two space">
+            <article class="card edu">
+              <div class="edu-top">
+                <span class="edu-icon">🎓</span>
+                <span class="badge done">Completed</span>
+              </div>
+              <div class="meta">Bachelor's Degree</div>
+              <h3>BCA</h3>
+              <p class="edu-school">
+                Naranlala College of Professional &amp; Applied Sciences,
+                Navsari
+              </p>
+              <div class="edu-foot"><span>CGPA</span><strong> </strong></div>
+            </article>
 
-      <article class="card edu">
-        <div class="edu-top">
-          <span class="edu-icon">🎓</span>
-          <span class="badge live">Completed</span>
+            <article class="card edu">
+              <div class="edu-top">
+                <span class="edu-icon">🎓</span>
+                <span class="badge live">Completed</span>
+              </div>
+              <div class="meta">Master's Degree</div>
+              <h3>MCA</h3>
+              <p class="edu-school">
+                SCET University (Sarvajanik College of Engineering and
+                Technology)
+              </p>
+              <div class="edu-foot"><span>CGPA </span><strong></strong></div>
+            </article>
+          </div>
         </div>
-        <div class="meta">Master's Degree</div>
-        <h3>MCA</h3>
-        <p class="edu-school">
-          SCET University (Sarvajanik College of Engineering and Technology)
-        </p>
-        <div class="edu-foot">
-          <span>CGPA </span><strong></strong>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
+      </section>
 
       <!-- Contact US  -->
-          <section id="contact">
+      <section id="contact">
         <div class="wrap">
           <div class="grid two">
             <div>
@@ -1057,10 +1060,7 @@
                   ><strong>Krisha Maradiya</strong></a
                 >
               </div>
-              <div class="contact-link">GitHub — [optional profile link]</div>
-              <p class="note">
-                Download CV — add your PDF and link before publishing.
-              </p>
+              <p class="note">Download CV —</p>
             </div>
             <form
               class="card"
@@ -1086,7 +1086,7 @@
                 type="email"
                 autocomplete="email"
                 required
-                placeholder="you@example.com"
+                placeholder="Email address"
               /><label for="message">Project details</label
               ><textarea
                 id="message"
@@ -1109,7 +1109,6 @@
     </main>
     <footer>
       <div class="wrap">
-        
         <nav aria-label="Footer navigation">
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
