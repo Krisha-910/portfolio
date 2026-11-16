@@ -655,8 +655,8 @@
           ><span class="brand-name">Krisha Maradiya</span></a
         >
         <nav id="site-nav" aria-label="Main navigation">
-          <a href="#about">About</a><a href="#skills">Skills</a
-          ><a href="#projects">Projects</a><a href="#experience">Experience</a>
+          <a href="#about">About</a><a href="#experience">Experience</a>
+          <a href="#skills">Skills</a><a href="#projects">Projects</a>
         </nav>
         <a class="btn primary" href="#contact">Contact Me ↗</a>
         <button
@@ -1020,7 +1020,7 @@
                 <span class="tag">CSS3</span>
                 <span class="tag">Bootstrap</span>
                 <span class="tag">SCSS</span>
-                <span class="tag">Wordpress</span>
+                <span class="tag">WordPress</span>
                 <span class="tag">Responsive Design</span>
               </div>
               <a
@@ -1143,7 +1143,7 @@
               >
               
                <div class="contact-link">
-                LinkedIn —
+                LinkedIn :
                 <a
                   href="https://in.linkedin.com/in/krisha-maradiya-a08133251"
                   target="_blank"
@@ -1281,7 +1281,7 @@
 
         const button = form.querySelector("button[type=submit]");
         button.disabled = true;
-        // formStatus.textContent = "Sending your message…";
+        formStatus.textContent = "Sending your message…";
 
         try {
           const data = Object.fromEntries(new FormData(form));
